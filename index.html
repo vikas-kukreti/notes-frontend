@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Document</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+
+<body> 
+  <section id="login-form">
+    <div class="card">
+      <div class="card-header">
+        <h3>Login</h3>
+      </div>
+      <div class="card-body">
+        <form>
+          <div class="error-message" id="login-error" >Invalid Credentials</div>
+          <div class="input-group input-email">
+            <img alt="Email Icon" src="assets/mail.svg" />
+            <input type="email" name="email" required placeholder="Email" />
+          </div>
+          <div class="input-group input-password">
+            <img alt="Password Icon" src="assets/lock.svg" />
+            <input type="password" required name="password" placeholder="Password" />
+          </div>
+          <div class="button-group">
+            <button class="primary" id="login-btn">Login</button>
+            <button class="secondary" id="navigate-signup" type="button">Sign Up</button>
+          </div>
+        </form>
+      </div>
+    </div>
+  </section>
+
+  <section id="signup-form">
+    <div class="card">
+      <div class="card-header">
+        <h3>Sign In</h3>
+      </div>
+      <div class="card-body">
+        <form>
+          <div class="input-group input-user">
+            <img alt="User Icon" src="assets/user.svg" />
+            <input type="text" name="name" required placeholder="Username" />
+            <span class="error-message"></span>
+          </div>
+          <div class="input-group input-email">
+            <img alt="Email Icon" src="assets/mail.svg" />
+            <input type="email" name="email" required placeholder="Email" />
+            <span class="error-message"></span>
+          </div>
+          <div class="input-group input-password">
+            <img alt="Password Icon" src="assets/lock.svg" />
+            <input type="password" name="password" required placeholder="Password" />
+            <span class="error-message"></span>
+          </div>
+          <div class="input-group input-confirm-password">
+            <img alt="Password Icon" src="assets/eye.svg" />
+            <input type="password" required placeholder="Confirm Password" />
+            <span class="error-message"></span>
+          </div>
+          <div class="button-group">
+            <button class="primary">Sign Up</button>
+          </div>
+          <span class="login-text">If you already have an account,<br><a href="javascript:void"
+              id="navigate-login">Login here</a></span>
+        </form>
+      </div>
+    </div>
+  </section>
+
+  <section id="home-section">
+    <div class="user-header">
+      <img src="assets/user.svg" />
+      <h2>Vikas Kukreti</h2>
+      <button class="secondary" id="add-btn">New Note</button>
+      <button class="danger" id="logout-btn">Logout</button>
+    </div>
+    <div class="notes-list">
+      <ul id="notes-list">
+       
+      </ul>
+      <pre class="content"></pre>
+    </div>
+  </section>
+
+  <div class="modal" id="new-note-modal">
+    <div class="modal-body">
+      <h3>Add a New Note</h3>
+      <form id="new-note-form">
+        <input type="text" name="title" placeholder="Enter Title">
+        <textarea type="text" name="content" placeholder="Enter Content"></textarea>
+        <input type="hidden" name="note_id" id="note-id">
+        <button class="primary">Add Note</button>
+      <button class="danger" id="cancel-btn">Cancel</button>
+      </form>
+    </div>
+  </div>
+  <script src="main.js"></script>
+</body>
+
+</html>
