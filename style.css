@@ -158,9 +158,41 @@ button.danger{
     
 }
 
+.user-header .user-details {
+    position: relative;
+    display: flex;
+    align-items: center;
+    margin-right: auto;
+    padding: 5px;
+}
+
+.user-header .user-details:hover {
+    background: rgba(0, 0, 0, 0.2);
+    cursor: pointer;
+    border-radius: 4px;
+}
+
+.user-details .edit-button {
+    display: none;
+    position: absolute;
+    border-radius: 50%;
+    width: 25px;
+    height: 25px;
+    align-items: center;
+    justify-content: center;
+}
+
+.user-details .edit-button img {
+    background: none;
+    margin: 0;
+}
+.user-header .user-details:hover .edit-button {
+    display: flex;
+}
+
+
 .user-header h2{
     flex: 1;
-        
 }
 
 .notes-list{
@@ -269,7 +301,7 @@ button.danger{
     max-width: 700px;
 }
 
-.modal-body input, .modal-body textarea{
+.modal-body input, .modal-body textarea, .modal-body label{
     width: calc(100% - 40px);
     margin-bottom: 10px;
     display: block;

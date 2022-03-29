@@ -26,7 +26,7 @@
             <input type="password" required name="password" placeholder="Password" />
           </div>
           <div class="button-group">
-            <button class="primary" id="login-btn">Login</button>
+            <button type="submit" class="primary" id="login-btn">Login</button>
             <button class="secondary" id="navigate-signup" type="button">Sign Up</button>
           </div>
         </form>
@@ -41,6 +41,7 @@
       </div>
       <div class="card-body">
         <form>
+          <div class="error-message" id="signup-error" >Invalid Credentials</div>
           <div class="input-group input-user">
             <img alt="User Icon" src="assets/user.svg" />
             <input type="text" name="name" required placeholder="Username" />
@@ -58,30 +59,34 @@
           </div>
           <div class="input-group input-confirm-password">
             <img alt="Password Icon" src="assets/eye.svg" />
-            <input type="password" required placeholder="Confirm Password" />
+            <input type="password" name="c_password" required placeholder="Confirm Password" />
             <span class="error-message"></span>
           </div>
           <div class="button-group">
-            <button class="primary">Sign Up</button>
+            <button type="submit" class="primary" id="signup-btn">Sign Up</button>
           </div>
-          <span class="login-text">If you already have an account,<br><a href="javascript:void"
+          <span class="login-text">If you already have an account,<br><a href="javascript:void(0)"
               id="navigate-login">Login here</a></span>
         </form>
       </div>
     </div>
   </section>
 
+
   <section id="home-section">
     <div class="user-header">
-      <img src="assets/user.svg" />
-      <h2>Vikas Kukreti</h2>
+      <div class="user-details">
+        <img class="user-profile" alt="user" src="assets/user.svg" />
+        <h2></h2>
+        <button class="edit-button" title="Edit Profile" type="button">
+          <img alt="edit" src="assets/edit.svg">
+        </button>
+      </div>
       <button class="secondary" id="add-btn">New Note</button>
       <button class="danger" id="logout-btn">Logout</button>
     </div>
     <div class="notes-list">
-      <ul id="notes-list">
-       
-      </ul>
+      <ul id="notes-list"></ul>
       <pre class="content"></pre>
     </div>
   </section>
@@ -93,11 +98,26 @@
         <input type="text" name="title" placeholder="Enter Title">
         <textarea type="text" name="content" placeholder="Enter Content"></textarea>
         <input type="hidden" name="note_id" id="note-id">
-        <button class="primary">Add Note</button>
-      <button class="danger" id="cancel-btn">Cancel</button>
+        <button type="submit" class="primary">Add Note</button>
+        <button type="button" class="danger" id="cancel-btn">Cancel</button>
       </form>
     </div>
   </div>
+
+  <div class="modal" id="profile-modal" method="post" enctype="multipart/form-data">
+    <div class="modal-body">
+      <h3>Your Profile</h3>
+      <form id="profile-form">
+        <label>Select new profile image</label>
+        <input name="image" type="file" placeholder="Select Profile Picture" />
+        <input name="name" type="text" placeholder="Name" />
+        <button type="submit" class="primary">Update</button>
+        <button type="button" class="danger" id="cancel-profile">Cancel</button>
+      </form>
+    </div>
+  </div>
+
+  
   <script src="main.js"></script>
 </body>
 
